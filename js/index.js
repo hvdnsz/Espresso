@@ -19,6 +19,8 @@ var demo = (function(window, undefined) {
    */
   var layout = {};
 
+  var currentCard = 11;
+
   /**
    * Initialise demo.
    */
@@ -106,6 +108,10 @@ var demo = (function(window, undefined) {
 
     var card = layout[id].card;
 
+    // Keep track of current card for extra care
+    currentCard = card._el
+    console.log(currentCard);
+
     // Prevent when card already open and user click on image.
     if (card.isOpen && isOpenClick) return;
 
@@ -188,9 +194,15 @@ var demo = (function(window, undefined) {
     return TL
   }
 
+  // get function for exposition
+  function get_currentCard () {
+    return currentCard;
+  }
+
   // Expose methods.
   return {
-    init: init
+    init: init,
+    get_currentCard: get_currentCard
   };
 
 })(window);
@@ -278,3 +290,14 @@ $(".navigation ul li label").each((i, elem) => {
     }
   }
 });
+
+
+// Fix stuck scroll bug
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+} else {
+  window.onbeforeunload = function () {
+      var cCard = demo.get_currentCard();
+      cCard.scrollTo(0, 0);
+  }
+}

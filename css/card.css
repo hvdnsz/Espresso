@@ -1,4 +1,5 @@
 /* CARD */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .card {
 	position: relative;
@@ -44,15 +45,13 @@
 }
 
 .card__content {
-	font-family: var(--font-article);
-	font-size: var(--font-size);
-	position: relative;
 	width: 100%;
 	height: auto;
-	margin: 0 auto;
-	padding: 30px 40px 22px;
-	background: rgb(255,248,244);
-	background: linear-gradient(180deg, rgba(255,248,243,1) 16%, rgba(237,221,201,1) 81%);
+	padding: 4.375vmax 1.5ch 10vh;
+	/* background: rgb(255,248,244);
+	background: linear-gradient(180deg, rgba(255,248,243,1) 16%, rgba(237,221,201,1) 81%); */
+	background: rgb(255,248,243);
+	background: linear-gradient(90deg, rgba(255,248,243,1) 16%, rgba(251,242,234,1) 78%); 
 }
 
 .card__container--closed .card__content {
@@ -62,11 +61,21 @@
 	background: transparent;
 }
 
-.card__caption {
-	font-size: 2em;
-	max-width: 900px;
+.card__wrapper {
+	font-family: 'Roboto', sans-serif;
+	/* font-size: 1.125rem; */
+	font-size: calc(15px + 0.390625vw);
+	position: relative;
 	margin: 0 auto;
-	padding: 35px 30px 0px;
+	max-width: 58ch;
+	/* margin: auto 2vw auto; */
+}
+
+.card__caption {
+	position: relative;
+	font-size: 2em;
+	/* max-width: 900px; */
+	margin: 0 auto;
 }
 
 .card__container--closed .card__caption {
@@ -101,24 +110,19 @@
 }
 
 .card__copy {
-	font-size: 1.15em;
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 25px 30px 100px;
+	/* font-size: 1.15em; */
+	/* max-width: 60ch; */
+	/* margin: 0 auto; */
+	padding: 0;
 	color: var(--text-color);
 }
 
-.magnified_introduction p:first-of-type {
-	font-size: calc(1.15em * 1.1);
-	padding: 0 0 1em 0;
-}
-
 .card__btn-close {
-	font-size: 31px;
+	font-size: 2.3vw;
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 36px;
+	padding: 1.5vw;
 	cursor: pointer;
 }
 
@@ -130,7 +134,7 @@
 	font-size: .85em;
 	display: -webkit-flex;
 	display: flex;
-	padding: 0 0 35px 0;
+	padding-top: 1.5vw;
 
 	-webkit-align-items: center;
 	align-items: center;
@@ -195,8 +199,8 @@
 	}
 	.card__content {
 		margin-bottom: 0;
-		padding-right: 20px;
-		padding-left: 20px;
+		/* padding-right: 20px;
+		padding-left: 20px; */
 	}
 }
 
@@ -209,15 +213,15 @@
 
 @media only screen and (max-width: 400px) {
 	.card__caption {
-		font-size: 1.25em;
-		padding: 35px 0px 0px;
+		font-size: 0.938;
+		/* padding: 35px 0px 0px; */
 	}
 	.meta {
 		padding: 0 0 25px 0;
 	}
 	.card__copy {
 		font-size: 90%;
-		padding: 25px 0px 100px;
+		/* padding: 25px 0px 100px; */
 	}
 }
 
