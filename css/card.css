@@ -138,17 +138,22 @@
 	visibility: hidden;
 }
 
+.meta__wrapinfo {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	column-gap: 0.6em;
+	align-items: center;
+}
+
 .meta__avatar {
 	border-radius: 50%;
 }
 
-.meta__author {
+.meta__author
+.meta__readtime {
 	font-weight: bold;
-	padding: 0 0.938em;
-}
-
-.meta__date {
-	margin: 0 0 0 auto;
 }
 
 /* Styling the articles */
@@ -206,9 +211,9 @@
 	.card__caption {
 		font-size: 0.938em;
 	}
-	.meta {
+	/* .meta {
 		padding: 0 0 25px 0;
-	}
+	} */
 	.card__copy {
 		font-size: 90%;
 	}
