@@ -93,7 +93,7 @@
 .card__container--closed .card__title {
 	font-size: 1em;
 	color: #fff;
-	-webkit-text-stroke-width: 1.2px;
+	-webkit-text-stroke-width: thin;
     -webkit-text-stroke-color: #fff
 }
 
@@ -108,7 +108,7 @@
 .card__container--closed .card__subtitle {
 	font-size: .92em;
 	color: #f8f8f8;
-	-webkit-text-stroke-width: 1.1px;
+	-webkit-text-stroke-width: thin;
     -webkit-text-stroke-color: #fff;
 }
 
