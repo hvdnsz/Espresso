@@ -19,7 +19,9 @@ var demo = (function(window, undefined) {
    */
   var layout = {};
 
-  var currentCard = 11;
+  var currentCard;
+
+  let mybutton = document.getElementById("go-back");
 
   /**
    * Initialise demo.
@@ -33,6 +35,13 @@ var demo = (function(window, undefined) {
     // do the first filter
     var chosenRovat = $('input[name="rovatok"]:checked')[0].value;
     _handleFiltering(chosenRovat);
+
+    // bind back button
+    mybutton.addEventListener("click", (e) => {
+      // console.log(currentCard);
+      // currentCard.firstElementChild.scroll({behavior: "smooth"})
+      currentCard.firstElementChild.scrollTo(0, 0)
+    });	
   };
   
   /**
@@ -90,9 +99,20 @@ var demo = (function(window, undefined) {
 
       var cardImage = $(card).find(SELECTORS.cardImage);
       var cardClose = $(card).find(SELECTORS.cardClose);
+      var cardContainer = $(card).find(".card__container");
 
       $(cardImage).on('click', _playSequence.bind(this, true, i));
       $(cardClose).on('click', _playSequence.bind(this, false, i));
+
+      function scrollFunction() {
+        if (cardContainer[0].scrollTop > 20) {
+          mybutton.style.display = 'block';
+        } else {
+          mybutton.style.display = "none";
+        }
+      };
+
+      $(cardContainer).on('scroll', scrollFunction);
     });
   };
 
@@ -109,8 +129,7 @@ var demo = (function(window, undefined) {
     var card = layout[id].card;
 
     // Keep track of current card for extra care
-    currentCard = card._el
-    console.log(currentCard);
+    currentCard = card._el;
 
     // Prevent when card already open and user click on image.
     if (card.isOpen && isOpenClick) return;
@@ -196,7 +215,7 @@ var demo = (function(window, undefined) {
 
   // get function for exposition
   function get_currentCard () {
-    return currentCard;
+    return currentCard._el;
   }
 
   // Expose methods.
@@ -300,4 +319,4 @@ if (history.scrollRestoration) {
       var cCard = demo.get_currentCard();
       cCard.scrollTo(0, 0);
   }
-}
+};

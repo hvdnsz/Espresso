@@ -128,6 +128,16 @@ input[type="radio"] {
 	transition: all 1s;
 }
 
+#go-back {
+	display: none;
+	width: 2.5rem;
+	height: 2.5rem;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	cursor: pointer;
+}
+
 /* Toggle expanding underline to teleporting */
 @media screen and (max-width: 1260px) {
 	.navigation__item {
