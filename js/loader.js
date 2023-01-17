@@ -1,4 +1,5 @@
-var loader;
+var preloader = $('#preloader')
+var content = $('header, main')
 
 // rekurziv fade out
 function loadNow(opacity) {
@@ -6,7 +7,7 @@ function loadNow(opacity) {
         displayContent();
     } else {
         // loader.style.opacity = opacity;
-        $('#preloader').css('opacity', opacity)
+        preloader.css('opacity', opacity)
         window.setTimeout(function() {
             loadNow(opacity - 0.05);
         }, 50);
@@ -14,13 +15,12 @@ function loadNow(opacity) {
 }
 
 function displayContent() {
-    $('body *').show()
-    $('#preloader').hide()
+    content.show()
+    preloader.hide()
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    $('body *').hide()
-    $('#preloader').show()
+    content.hide()
     $('#preloader *').show()
-    loadNow(4);
+    loadNow(3.7);
 });
