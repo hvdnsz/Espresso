@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: url('https://i.giphy.com/media/IGO2NOX9aVhrlQKDaJ/giphy.webp') no-repeat center;
+	z-index: 999;
+}
+
+
 :root {
     /* Main html */
     --bg-color: #2b1200;
