@@ -1,11 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-#loader{
-	position: fixed;
+#preloader {
 	width: 100%;
-	height: 100vh;
-	background: url('https://i.giphy.com/media/IGO2NOX9aVhrlQKDaJ/giphy.webp') no-repeat center;
-	z-index: 999;
+    height: 100%;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader__gif {
+	margin-top: 15vh;
+	width: min(40vh, 40vw);
+	height: min(40vh, 40vw);
+    /* width: 45%;
+    height: 55%; */
+}
+
+.preloader__text {
+	font-family: 'Special Elite';
+	font-size: calc(15px + 0.390625vw * 4);
+	text-align: center;
+	color: var(--bg-color);
 }
 
 

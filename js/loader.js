@@ -6,7 +6,7 @@ function loadNow(opacity) {
         displayContent();
     } else {
         // loader.style.opacity = opacity;
-        $('#loader').css('opacity', opacity)
+        $('#preloader').css('opacity', opacity)
         window.setTimeout(function() {
             loadNow(opacity - 0.05);
         }, 50);
@@ -15,11 +15,12 @@ function loadNow(opacity) {
 
 function displayContent() {
     $('body *').show()
-    $('#loader').hide()
+    $('#preloader').hide()
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     $('body *').hide()
-    $('#loader').show()
+    $('#preloader').show()
+    $('#preloader *').show()
     loadNow(4);
 });
